@@ -630,7 +630,7 @@ function handleMediaFileUpload(event, index) {
         } else if (file.type.startsWith('image/')) {
             // Handle image file
             if (file.size > 5 * 1024 * 1024) {
-                alert('Image file is too large. Please select an image smaller than 5MB.');
+                alert('Файл изображения слишком большой. Пожалуйста, выберите изображение меньше 5МБ.');
                 return;
             }
 
@@ -1053,7 +1053,7 @@ async function handleImageUpload(event, poseIndex) {
 
             // Check file size (limit to 5MB)
             if (file.size > 5 * 1024 * 1024) {
-                alert('Image file is too large. Please select an image smaller than 5MB.');
+                alert('Файл изображения слишком большой. Пожалуйста, выберите изображение меньше 5МБ.');
                 return;
             }
 
@@ -1142,10 +1142,10 @@ async function handleImageUpload(event, poseIndex) {
 
 function updatePoseName(labelElement, poseIndex) {
     const settings = loadSettings();
-    
+
     // Get the raw text content
     let rawName = labelElement.textContent || labelElement.innerText || '';
-    
+
     // Clean the name but be less aggressive to allow user input
     let cleanName = rawName
         .replace(/[\n\r\t]/g, ' ')             // Remove newlines, tabs
@@ -1164,10 +1164,10 @@ function updatePoseName(labelElement, poseIndex) {
     }
 
     settings.poseNames[poseIndex - 1] = cleanName;
-    
+
     // Update the display with clean name
     labelElement.textContent = cleanName;
-    
+
     saveSettings(settings);
     console.log(`Updated pose ${poseIndex} name to: ${cleanName}`);
 }
@@ -1738,7 +1738,7 @@ function analyzeBodyDistance(pose) {
     if (leftShoulder.score > 0.3 && rightShoulder.score > 0.3) {
         const shoulderDistance = Math.sqrt(
             Math.pow(rightShoulder.position.x - leftShoulder.position.x, 2) +
-            Math.pow(rightShoulder.position.y - leftShoulder.position.y, 2)
+            Math.pow(rightShoulder.position.y - rightShoulder.position.y, 2)
         );
 
         // Optimal shoulder distance range (in pixels) for good recognition
