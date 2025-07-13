@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Pose Recognition</title>
+    <title>Распознавание поз</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,34 +13,34 @@
 <body>
     <div class="container">
         <div id="initial-page" class="page active">
-            <h1>Pose Recognition Setup</h1>
+            <h1>Настройка распознавания поз</h1>
             <div class="initial-setup">
                 <div class="setup-section">
                     <div class="icon-card" onclick="showPoseImagesSection()">
-                        <div class="icon letter-icon">P</div>
-                        <h3>Pose Images</h3>
-                        <p>Upload local images of poses for reference</p>
+                        <div class="icon letter-icon">И</div>
+                        <h3>Изображения поз</h3>
+                        <p>Загрузите локальные изображения поз для справки</p>
                     </div>
 
                     <div class="icon-card" onclick="showDemoVideoSection()">
-                        <div class="icon letter-icon">D</div>
-                        <h3>Demo Video</h3>
-                        <p>Add local video demonstrating movements</p>
+                        <div class="icon letter-icon">Д</div>
+                        <h3>Демо видео</h3>
+                        <p>Добавьте локальное видео с демонстрацией движений</p>
                     </div>
 
                     <div class="icon-card" onclick="showVideoLinksSection()">
-                        <div class="icon letter-icon">V</div>
-                        <h3>Video Links</h3>
-                        <p>Add up to 10 local videos for additional explanations</p>
+                        <div class="icon letter-icon">В</div>
+                        <h3>Видео ссылки</h3>
+                        <p>Добавьте до 10 локальных видео для дополнительных объяснений</p>
                     </div>
                 </div>
 
                 <div id="pose-images-section" class="setup-content" style="display: none;">
-                    <h3>Pose Images Setup</h3>
-                    <p>Upload reference images for each pose you want to practice:</p>
+                    <h3>Настройка изображений поз</h3>
+                    <p>Загрузите эталонные изображения для каждой позы, которую хотите практиковать:</p>
                     <div class="pose-images-grid">
                         <div class="pose-upload-item">
-                            <label>Pose 1 Image:</label>
+                            <label>Изображение позы 1:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-1-img" accept="image/*" onchange="handlePoseImageUpload(event, 1)">
                                 <div class="file-display">
@@ -51,7 +51,7 @@
                             <img id="pose-1-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-1-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 2 Image:</label>
+                            <label>Изображение позы 2:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-2-img" accept="image/*" onchange="handlePoseImageUpload(event, 2)">
                                 <div class="file-display">
@@ -62,7 +62,7 @@
                             <img id="pose-2-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-2-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 3 Image:</label>
+                            <label>Изображение позы 3:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-3-img" accept="image/*" onchange="handlePoseImageUpload(event, 3)">
                                 <div class="file-display">
@@ -73,7 +73,7 @@
                             <img id="pose-3-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-3-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 4 Image:</label>
+                            <label>Изображение позы 4:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-4-img" accept="image/*" onchange="handlePoseImageUpload(event, 4)">
                                 <div class="file-display">
@@ -84,7 +84,7 @@
                             <img id="pose-4-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-4-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 5 Image:</label>
+                            <label>Изображение позы 5:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-5-img" accept="image/*" onchange="handlePoseImageUpload(event, 5)">
                                 <div class="file-display">
@@ -95,7 +95,7 @@
                             <img id="pose-5-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-5-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 6 Image:</label>
+                            <label>Изображение позы 6:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-6-img" accept="image/*" onchange="handlePoseImageUpload(event, 6)">
                                 <div class="file-display">
@@ -106,7 +106,7 @@
                             <img id="pose-6-preview" class="pose-preview-small" style="display: none;" onclick="openImageFullscreen('pose-6-preview')">
                         </div>
                         <div class="pose-upload-item">
-                            <label>Pose 7 Image:</label>
+                            <label>Изображение позы 7:</label>
                             <div class="file-input-container">
                                 <input type="file" id="pose-7-img" accept="image/*" onchange="handlePoseImageUpload(event, 7)">
                                 <div class="file-display">
@@ -124,8 +124,8 @@
                 </div>
 
                 <div id="demo-video-section" class="setup-content" style="display: none;">
-                    <h3>Demo Video Setup</h3>
-                    <p>Upload a local video file that demonstrates the movements:</p>
+                    <h3>Настройка демо видео</h3>
+                    <p>Загрузите локальный видеофайл, демонстрирующий движения:</p>
                     <div class="video-upload">
                         <input type="file" id="demo-video" accept="video/*" onchange="handleDemoVideoUpload(event)">
                         <div class="demo-video-controls" id="demo-video-controls" style="display: none; margin-top: 10px;">
@@ -140,125 +140,125 @@
                 </div>
 
                 <div id="video-links-section" class="setup-content" style="display: none;">
-                    <h3>Additional Local Videos & Images</h3>
-                    <p>Add up to 10 local video files or images for additional explanations and tutorials:</p>
+                    <h3>Дополнительные локальные видео и изображения</h3>
+                    <p>Добавьте до 10 локальных видеофайлов или изображений для дополнительных объяснений и уроков:</p>
                     <div class="video-links-container">
                         <div class="video-link-item">
-                            <label>Media File 1:</label>
+                            <label>Медиафайл 1:</label>
                             <input type="file" id="video-file-1" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 1)">
                             <div class="media-preview-container">
                                 <video id="video-preview-1" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(1)"></video>
                                 <img id="image-preview-1" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-1')">
                                 <div class="media-controls" id="media-controls-1" style="display: none;">
-                                    <button onclick="openMediaFullscreen(1)" class="open-media-btn" id="open-media-btn-1">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(1)" class="open-media-btn" id="open-media-btn-1">▶ Открыть видео</button>
                                     <span id="media-filename-1" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 2:</label>
+                            <label>Медиафайл 2:</label>
                             <input type="file" id="video-file-2" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 2)">
                             <div class="media-preview-container">
                                 <video id="video-preview-2" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(2)"></video>
                                 <img id="image-preview-2" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-2')">
                                 <div class="media-controls" id="media-controls-2" style="display: none;">
-                                    <button onclick="openMediaFullscreen(2)" class="open-media-btn" id="open-media-btn-2">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(2)" class="open-media-btn" id="open-media-btn-2">▶ Открыть видео</button>
                                     <span id="media-filename-2" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 3:</label>
+                            <label>Медиафайл 3:</label>
                             <input type="file" id="video-file-3" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 3)">
                             <div class="media-preview-container">
                                 <video id="video-preview-3" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(3)"></video>
                                 <img id="image-preview-3" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-3')">
                                 <div class="media-controls" id="media-controls-3" style="display: none;">
-                                    <button onclick="openMediaFullscreen(3)" class="open-media-btn" id="open-media-btn-3">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(3)" class="open-media-btn" id="open-media-btn-3">▶ Открыть видео</button>
                                     <span id="media-filename-3" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 4:</label>
+                            <label>Медиафайл 4:</label>
                             <input type="file" id="video-file-4" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 4)">
                             <div class="media-preview-container">
                                 <video id="video-preview-4" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(4)"></video>
                                 <img id="image-preview-4" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-4')">
                                 <div class="media-controls" id="media-controls-4" style="display: none;">
-                                    <button onclick="openMediaFullscreen(4)" class="open-media-btn" id="open-media-btn-4">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(4)" class="open-media-btn" id="open-media-btn-4">▶ Открыть видео</button>
                                     <span id="media-filename-4" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 5:</label>
+                            <label>Медиафайл 5:</label>
                             <input type="file" id="video-file-5" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 5)">
                             <div class="media-preview-container">
                                 <video id="video-preview-5" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(5)"></video>
                                 <img id="image-preview-5" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-5')">
                                 <div class="media-controls" id="media-controls-5" style="display: none;">
-                                    <button onclick="openMediaFullscreen(5)" class="open-media-btn" id="open-media-btn-5">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(5)" class="open-media-btn" id="open-media-btn-5">▶ Открыть видео</button>
                                     <span id="media-filename-5" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 6:</label>
+                            <label>Медиафайл 6:</label>
                             <input type="file" id="video-file-6" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 6)">
                             <div class="media-preview-container">
                                 <video id="video-preview-6" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(6)"></video>
                                 <img id="image-preview-6" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-6')">
                                 <div class="media-controls" id="media-controls-6" style="display: none;">
-                                    <button onclick="openMediaFullscreen(6)" class="open-media-btn" id="open-media-btn-6">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(6)" class="open-media-btn" id="open-media-btn-6">▶ Открыть видео</button>
                                     <span id="media-filename-6" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 7:</label>
+                            <label>Медиафайл 7:</label>
                             <input type="file" id="video-file-7" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 7)">
                             <div class="media-preview-container">
                                 <video id="video-preview-7" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(7)"></video>
                                 <img id="image-preview-7" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-7')">
                                 <div class="media-controls" id="media-controls-7" style="display: none;">
-                                    <button onclick="openMediaFullscreen(7)" class="open-media-btn" id="open-media-btn-7">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(7)" class="open-media-btn" id="open-media-btn-7">▶ Открыть видео</button>
                                     <span id="media-filename-7" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 8:</label>
+                            <label>Медиафайл 8:</label>
                             <input type="file" id="video-file-8" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 8)">
                             <div class="media-preview-container">
                                 <video id="video-preview-8" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(8)"></video>
                                 <img id="image-preview-8" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-8')">
                                 <div class="media-controls" id="media-controls-8" style="display: none;">
-                                    <button onclick="openMediaFullscreen(8)" class="open-media-btn" id="open-media-btn-8">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(8)" class="open-media-btn" id="open-media-btn-8">▶ Открыть видео</button>
                                     <span id="media-filename-8" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 9:</label>
+                            <label>Медиафайл 9:</label>
                             <input type="file" id="video-file-9" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 9)">
                             <div class="media-preview-container">
                                 <video id="video-preview-9" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(9)"></video>
                                 <img id="image-preview-9" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-9')">
                                 <div class="media-controls" id="media-controls-9" style="display: none;">
-                                    <button onclick="openMediaFullscreen(9)" class="open-media-btn" id="open-media-btn-9">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(9)" class="open-media-btn" id="open-media-btn-9">▶ Открыть видео</button>
                                     <span id="media-filename-9" class="media-filename-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="video-link-item">
-                            <label>Media File 10:</label>
+                            <label>Медиафайл 10:</label>
                             <input type="file" id="video-file-10" accept="video/*,image/*" onchange="handleMediaFileUpload(event, 10)">
                             <div class="media-preview-container">
                                 <video id="video-preview-10" class="video-preview" controls style="display: none;" onclick="openFullscreenVideo(10)"></video>
                                 <img id="image-preview-10" class="image-preview" style="display: none;" onclick="openImageFullscreen('image-preview-10')">
                                 <div class="media-controls" id="media-controls-10" style="display: none;">
-                                    <button onclick="openMediaFullscreen(10)" class="open-media-btn" id="open-media-btn-10">▶ Open Video</button>
+                                    <button onclick="openMediaFullscreen(10)" class="open-media-btn" id="open-media-btn-10">▶ Открыть видео</button>
                                     <span id="media-filename-10" class="media-filename-text"></span>
                                 </div>
                             </div>
@@ -273,12 +273,12 @@
         </div>
 
         <div id="settings-page" class="page">
-            <h1>Pose Settings</h1>
+            <h1>Настройки поз</h1>
             <div class="settings-form">
                 <div class="form-group">
-                    <label>Local Model Files: 
+                    <label>Локальные файлы модели: 
                         <span class="model-info">
-                            <span class="class-counter-label">Classes:</span>
+                            <span class="class-counter-label">Классы:</span>
                             <span id="model-class-counter" class="class-counter empty">0</span>
                         </span>
                     </label>
@@ -292,62 +292,62 @@
                         <input type="file" id="weights-bin" accept=".bin" placeholder="weights.bin">
                         <label for="weights-bin">weights.bin</label>
 
-                        <button type="button" class="clear-memory-btn" onclick="clearMemory()" title="Clear all saved model files and poses">
-                            Clear Memory
+                        <button type="button" class="clear-memory-btn" onclick="clearMemory()" title="Очистить все сохраненные файлы модели и позы">
+                            Очистить память
                         </button>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Select Active Poses:</label>
+                    <label>Выберите активные позы:</label>
                     <div class="poses-selection">
                         <div class="pose-item">
                             <input type="checkbox" id="pose-1-enabled" checked>
-                            <label for="pose-1-enabled" contenteditable="true" onblur="updatePoseName(this, 1)">Pose 1</label>
+                            <label for="pose-1-enabled" contenteditable="true" onblur="updatePoseName(this, 1)">Поза 1</label>
                             <input type="file" id="pose-1-image" accept="image/*" onchange="handleImageUpload(event, 1)">
-                            <label for="pose-1-image">Choose File</label>
+                            <label for="pose-1-image">Выберите файл</label>
                             <img id="pose-1-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-2-enabled" checked>
-                            <label for="pose-2-enabled" contenteditable="true" onblur="updatePoseName(this, 2)">Pose 2</label>
+                            <label for="pose-2-enabled" contenteditable="true" onblur="updatePoseName(this, 2)">Поза 2</label>
                             <input type="file" id="pose-2-image" accept="image/*" onchange="handleImageUpload(event, 2)">
-                            <label for="pose-2-image">Choose File</label>
+                            <label for="pose-2-image">Выберите файл</label>
                             <img id="pose-2-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-3-enabled" checked>
-                            <label for="pose-3-enabled" contenteditable="true" onblur="updatePoseName(this, 3)">Pose 3</label>
+                            <label for="pose-3-enabled" contenteditable="true" onblur="updatePoseName(this, 3)">Поза 3</label>
                             <input type="file" id="pose-3-image" accept="image/*" onchange="handleImageUpload(event, 3)">
-                            <label for="pose-3-image">Choose File</label>
+                            <label for="pose-3-image">Выберите файл</label>
                             <img id="pose-3-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-4-enabled" checked>
-                            <label for="pose-4-enabled" contenteditable="true" onblur="updatePoseName(this, 4)">Pose 4</label>
+                            <label for="pose-4-enabled" contenteditable="true" onblur="updatePoseName(this, 4)">Поза 4</label>
                             <input type="file" id="pose-4-image" accept="image/*" onchange="handleImageUpload(event, 4)">
-                            <label for="pose-4-image">Choose File</label>
+                            <label for="pose-4-image">Выберите файл</label>
                             <img id="pose-4-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-5-enabled" checked>
-                            <label for="pose-5-enabled" contenteditable="true" onblur="updatePoseName(this, 5)">Pose 5</label>
+                            <label for="pose-5-enabled" contenteditable="true" onblur="updatePoseName(this, 5)">Поза 5</label>
                             <input type="file" id="pose-5-image" accept="image/*" onchange="handleImageUpload(event, 5)">
-                            <label for="pose-5-image">Choose File</label>
+                            <label for="pose-5-image">Выберите файл</label>
                             <img id="pose-5-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-6-enabled" checked>
-                            <label for="pose-6-enabled" contenteditable="true" onblur="updatePoseName(this, 6)">Pose 6</label>
+                            <label for="pose-6-enabled" contenteditable="true" onblur="updatePoseName(this, 6)">Поза 6</label>
                             <input type="file" id="pose-6-image" accept="image/*" onchange="handleImageUpload(event, 6)">
-                            <label for="pose-6-image">Choose File</label>
+                            <label for="pose-6-image">Выберите файл</label>
                             <img id="pose-6-preview" class="pose-preview">
                         </div>
                         <div class="pose-item">
                             <input type="checkbox" id="pose-7-enabled" checked>
-                            <label for="pose-7-enabled" contenteditable="true" onblur="updatePoseName(this, 7)">Pose 7</label>
+                            <label for="pose-7-enabled" contenteditable="true" onblur="updatePoseName(this, 7)">Поза 7</label>
                             <input type="file" id="pose-7-image" accept="image/*" onchange="handleImageUpload(event, 7)">
-                            <label for="pose-7-image">Choose File</label>
+                            <label for="pose-7-image">Выберите файл</label>
                             <img id="pose-7-preview" class="pose-preview">
                         </div>
                     </div>
@@ -356,59 +356,59 @@
                 <div class="settings-row">
                     <div class="form-group compact">
                         <label>
-                            <input type="checkbox" id="audio-enabled" checked> Audio Beep
+                            <input type="checkbox" id="audio-enabled" checked> Звуковой сигнал
                         </label>
                     </div>
                     <div class="form-group compact">
-                        <label>Delay (sec):</label>
+                        <label>Задержка (сек):</label>
                         <input type="number" id="recognition-delay" min="1" max="10" step="1" value="3">
                     </div>
                     <div class="form-group compact">
-                        <label>Accuracy:</label>
+                        <label>Точность:</label>
                         <input type="range" id="accuracy-threshold" min="0.3" max="0.9" step="0.05" value="0.5" onchange="updateAccuracyDisplay()">
                         <span id="accuracy-value">0.5</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Distance Calibration Guide:</label>
+                    <label>Руководство по калибровке расстояния:</label>
                     <div class="calibration-guide">
-                        <p><strong>For best results:</strong></p>
+                        <p><strong>Для наилучших результатов:</strong></p>
                         <ul style="text-align: left; margin: 10px 0; padding-left: 20px;">
-                            <li>Stand 3-4 feet (1-1.2 meters) from your camera</li>
-                            <li>Make sure your full body is visible in the frame</li>
-                            <li>Your shoulders should appear as the right size (not too wide/narrow)</li>
-                            <li>Good lighting helps pose detection accuracy</li>
+                            <li>Стойте в 3-4 футах (1-1.2 метра) от камеры</li>
+                            <li>Убедитесь, что все ваше тело видно в кадре</li>
+                            <li>Ваши плечи должны выглядеть правильного размера (не слишком широко/узко)</li>
+                            <li>Хорошее освещение помогает точности распознавания поз</li>
                         </ul>
-                        <p style="font-size: 14px; color: #666;">The app will show distance feedback during recognition to help you maintain proper positioning.</p>
+                        <p style="font-size: 14px; color: #666;">Приложение покажет обратную связь о расстоянии во время распознавания, чтобы помочь вам поддерживать правильное позиционирование.</p>
                     </div>
                 </div>
 
                 <div class="action-buttons">
-                    <button onclick="backToFirstScreen()" class="back-btn">Back to First Screen</button>
-                    <button onclick="startRecognition()">Start Recognition</button>
-                    <button onclick="saveAllData()">Save All Settings</button>
+                    <button onclick="backToFirstScreen()" class="back-btn">Назад к первому экрану</button>
+                    <button onclick="startRecognition()">Начать распознавание</button>
+                    <button onclick="saveAllData()">Сохранить все настройки</button>
                 </div>
             </div>
         </div>
         <div id="recognition-page" class="page">
-            <h1>Pose Recognition</h1>
+            <h1>Распознавание поз</h1>
             <div class="video-container">
                 <div id="webcam-container"></div>
                 <canvas id="output"></canvas>
                 <img id="pose-compare" class="pose-compare">
                 <div id="timer-display" class="timer-display">3</div>
             </div>
-            <div id="pose-name">Current Pose: None</div>
+            <div id="pose-name">Текущая поза: Нет</div>
             <div class="confidence-container">
-                <div class="confidence-label">Confidence</div>
+                <div class="confidence-label">Уверенность</div>
                 <div class="confidence-bar-background">
                     <div id="confidence-bar" class="confidence-bar"></div>
                 </div>
                 <div id="confidence-text" class="confidence-text">0%</div>
             </div>
             <div class="control-buttons">
-                <button onclick="refreshRecognition()">Refresh (Restart from Pose 1)</button>
-                <button onclick="showSettingsPage()">Back to Settings</button>
+                <button onclick="refreshRecognition()">Обновить (Перезапуск с позы 1)</button>
+                <button onclick="showSettingsPage()">Назад к настройкам</button>
             </div>
         </div>
     </div>

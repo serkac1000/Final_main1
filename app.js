@@ -11,13 +11,13 @@ let activePoses = [];
 
 // Define poses to match your 2-class model
 const poses = [
-    { name: "Mountain Pose", image: "pose1.jpg" },
-    { name: "Tree Pose", image: "pose2.jpg" },
-    { name: "Warrior I", image: "pose3.jpg" },
-    { name: "Warrior II", image: "pose4.jpg" },
-    { name: "Triangle Pose", image: "pose5.jpg" },
-    { name: "Child Pose", image: "pose6.jpg" },
-    { name: "Downward Dog", image: "pose7.jpg" }
+    { name: "Поза горы", image: "pose1.jpg" },
+    { name: "Поза дерева", image: "pose2.jpg" },
+    { name: "Воин I", image: "pose3.jpg" },
+    { name: "Воин II", image: "pose4.jpg" },
+    { name: "Поза треугольника", image: "pose5.jpg" },
+    { name: "Поза ребенка", image: "pose6.jpg" },
+    { name: "Собака мордой вниз", image: "pose7.jpg" }
 ];
 
 // Pose cycle for alternating between poses
@@ -312,11 +312,11 @@ function saveAllData() {
 
     // Pose images are automatically saved to IndexedDB when uploaded
 
-    alert('Settings and model data saved successfully!\n\nAll files including weights.bin and pose images are now saved locally and will persist between sessions.');
+    alert('Настройки и данные модели успешно сохранены!\n\nВсе файлы, включая weights.bin и изображения поз, теперь сохранены локально и будут сохраняться между сессиями.');
 }
 
 async function clearMemory() {
-    if (!confirm('⚠️ Clear All Memory?\n\nThis will permanently delete:\n• Saved model files (model.json, metadata.json, weights.bin)\n• All uploaded pose images\n• App settings\n\nAre you sure you want to continue?')) {
+    if (!confirm('⚠️ Очистить всю память?\n\nЭто навсегда удалит:\n• Сохраненные файлы модели (model.json, metadata.json, weights.bin)\n• Все загруженные изображения поз\n• Настройки приложения\n\nВы уверены, что хотите продолжить?')) {
         return;
     }
 
@@ -399,7 +399,7 @@ async function clearMemory() {
             showSettingsPage();
         }
 
-        alert('Memory Cleared Successfully!\n\nAll model files, pose images, and settings have been deleted. You can now upload a fresh model.');
+        alert('Память успешно очищена!\n\nВсе файлы модели, изображения поз и настройки были удалены. Теперь вы можете загрузить новую модель.');
 
         console.log('Memory cleared successfully - all local data removed');
 
@@ -489,7 +489,7 @@ function handlePoseImageUpload(event, poseIndex) {
     if (file) {
         // Validate file type
         if (!file.type.startsWith('image/')) {
-            alert('Please select a valid image file');
+            alert('Пожалуйста, выберите действительный файл изображения');
             return;
         }
 
@@ -526,13 +526,13 @@ function handleDemoVideoUpload(event) {
     if (file) {
         // Validate file type
         if (!file.type.startsWith('video/')) {
-            alert('Please select a valid video file');
+            alert('Пожалуйста, выберите действительный видеофайл');
             return;
         }
 
         // Check file size (limit to 100MB)
         if (file.size > 100 * 1024 * 1024) {
-            alert('Video file is too large. Please select a video smaller than 100MB.');
+            alert('Видеофайл слишком большой. Пожалуйста, выберите видео меньше 100МБ.');
             return;
         }
 
@@ -563,7 +563,7 @@ function handleDemoVideoUpload(event) {
 
 function openDemoVideoFullscreen() {
     if (!demoVideoFile) {
-        alert('No demo video file loaded');
+        alert('Демо видеофайл не загружен');
         return;
     }
 
@@ -679,7 +679,7 @@ function handleMediaFileUpload(event, index) {
 function openMediaFullscreen(index) {
     const mediaData = localVideoFiles.get(index);
     if (!mediaData) {
-        alert('No media file loaded for this slot');
+        alert('Медиафайл не загружен для этого слота');
         return;
     }
 
@@ -1047,7 +1047,7 @@ async function handleImageUpload(event, poseIndex) {
         try {
             // Validate file type
             if (!file.type.startsWith('image/')) {
-                alert('Please select a valid image file (JPG, PNG, GIF, etc.)');
+                alert('Пожалуйста, выберите действительный файл изображения (JPG, PNG, GIF и т.д.)');
                 return;
             }
 
@@ -1343,7 +1343,7 @@ async function startRecognition() {
     // Get active poses
     const activePosesList = getActivePoses();
     if (activePosesList.length === 0) {
-        alert('Cannot Start Recognition\n\nPlease select at least one pose to practice.');
+        alert('Невозможно начать распознавание\n\nПожалуйста, выберите хотя бы одну позу для практики.');
         return;
     }
 
@@ -1359,7 +1359,7 @@ async function startRecognition() {
     }
 
     if (missingPoseImages.length > 0) {
-        alert(`Cannot Start Recognition\n\nMissing pose images for selected poses:\n${missingPoseImages.join('\n')}\n\nPlease upload images for all selected poses before starting recognition.`);
+        alert(`Невозможно начать распознавание\n\nОтсутствуют изображения поз для выбранных поз:\n${missingPoseImages.join('\n')}\n\nПожалуйста, загрузите изображения для всех выбранных поз перед началом распознавания.`);
         return;
     }
 
@@ -1442,14 +1442,14 @@ async function startRecognition() {
     }
 
     if (missingFiles.length > 0) {
-        alert(`Cannot Start Recognition\n\nMissing required model files:\n${missingFiles.join('\n')}\n\nPlease upload all 3 model files before starting recognition.`);
+        alert(`Невозможно начать распознавание\n\nОтсутствуют необходимые файлы модели:\n${missingFiles.join('\n')}\n\nПожалуйста, загрузите все 3 файла модели перед началом распознавания.`);
         return;
     }
 
     // Additional validation for file structure
     const isValid = await validateLocalFiles();
     if (!isValid) {
-        alert('Cannot Start Recognition\n\nInvalid model files detected. Please ensure you have uploaded valid Teachable Machine pose model files:\n• model.json\n• metadata.json\n• weights.bin');
+        alert('Невозможно начать распознавание\n\nОбнаружены недействительные файлы модели. Пожалуйста, убедитесь, что вы загрузили действительные файлы модели поз Teachable Machine:\n• model.json\n• metadata.json\n• weights.bin');
         return;
     }
 
@@ -1626,7 +1626,7 @@ async function setupCamera() {
 
     } catch (error) {
         console.error('Camera setup failed:', error);
-        alert('Camera setup failed. Please ensure:\n1. Camera permissions are granted\n2. Camera is not being used by another application\n3. Try refreshing the page');
+        alert('Настройка камеры не удалась. Пожалуйста, убедитесь:\n1. Разрешения камеры предоставлены\n2. Камера не используется другим приложением\n3. Попробуйте обновить страницу');
         throw error;
     }
 }
@@ -1712,7 +1712,7 @@ function updateCurrentPose() {
 
     // Update expected pose display
     const poseNameElement = document.getElementById('pose-name');
-    poseNameElement.innerHTML = `<strong>Expected Pose:</strong> ${expectedPoseName}<br><strong>Current Pose:</strong> <span id="detected-pose">Detecting...</span><br><span id="distance-feedback"></span>`;
+    poseNameElement.innerHTML = `<strong>Ожидаемая поза:</strong> ${expectedPoseName}<br><strong>Текущая поза:</strong> <span id="detected-pose">Определение...</span><br><span id="distance-feedback"></span>`;
 
     const poseCompare = document.getElementById('pose-compare');
     const savedImage = poseImages.get(expectedPoseIndex);
@@ -1751,13 +1751,13 @@ function analyzeBodyDistance(pose) {
         let feedbackColor = "#4CAF50";
 
         if (shoulderDistance > optimalMax) {
-            feedback = "Move back - You're too close to the camera";
+            feedback = "Отойдите назад - Вы слишком близко к камере";
             feedbackColor = "#ff6b6b";
         } else if (shoulderDistance < tooFarThreshold) {
-            feedback = "Move closer - You're too far from the camera";
+            feedback = "Подойдите ближе - Вы слишком далеко от камеры";
             feedbackColor = "#ff6b6b";
         } else {
-            feedback = "Perfect distance! ";
+            feedback = "Идеальное расстояние! ";
             feedbackColor = "#4CAF50";
         }
 
@@ -1784,7 +1784,7 @@ function updateCurrentPoseDisplay(detectedPoseIndex, confidence) {
 
         detectedPoseElement.innerHTML = `<span style="color: ${isCorrect ? '#4CAF50' : '#ff6b6b'};">${detectedPoseName} (${confidencePercent}%)</span>`;
     } else {
-        detectedPoseElement.innerHTML = '<span style="color: #666;">Detecting...</span>';
+        detectedPoseElement.innerHTML = '<span style="color: #666;">Определение...</span>';
     }
 }
 
