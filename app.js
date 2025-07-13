@@ -497,6 +497,10 @@ function handlePoseImageUpload(event, poseIndex) {
         reader.onload = function(e) {
             preview.src = e.target.result;
             preview.style.display = 'block';
+            
+            // Add click handler for fullscreen
+            preview.onclick = () => openImageFullscreen(`pose-${poseIndex}-preview`);
+            preview.style.cursor = 'pointer';
 
             // Show file icon and name
             icon.style.display = 'inline';
@@ -828,6 +832,10 @@ function loadInitialSetupData() {
             if (preview) {
                 preview.src = savedImage;
                 preview.style.display = 'block';
+                
+                // Add click handler for fullscreen
+                preview.onclick = () => openImageFullscreen(`pose-${i}-preview`);
+                preview.style.cursor = 'pointer';
             }
 
             if (icon && nameElement && savedFilename) {
