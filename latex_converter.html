@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX to Presentation Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0066CC;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .start-create-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            min-width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .start-create-btn:hover {
+            background: #218838;
+        }
+
+        .start-create-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-content {
+            padding: 15px;
+        }
+
+        .file-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .file-input-group input[type="file"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .browse-btn {
+            background: #0066CC;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .browse-btn:hover {
+            background: #0056b3;
+        }
+
+        .media-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .media-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .media-btn:hover {
+            background: #218838;
+        }
+
+        .media-btn.video {
+            background: #dc3545;
+        }
+
+        .media-btn.video:hover {
+            background: #c82333;
+        }
+
+        .clear-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: auto;
+        }
+
+        .clear-btn:hover {
+            background: #5a6268;
+        }
+
+        .media-files-list {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.processing {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .file-selected {
+            color: #0066CC;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LaTeX to Presentation Converter</h1>
+        </div>
+
+        <!-- Start Create Button at the top -->
+        <button type="button" class="start-create-btn" id="startCreateBtn" onclick="startCreate()">
+            🚀 Start Create Presentation
+        </button>
+
+        <div class="main-content">
+            <form id="converterForm">
+                <!-- Input LaTeX File Section -->
+                <div class="form-section">
+                    <div class="section-header">📁 Input LaTeX File</div>
+                    <div class="section-content">
+                        <div class="file-input-group">
+                            <input type="file" id="tex-file" accept=".tex" />
+                            <button type="button" class="browse-btn" onclick="document.getElementById('tex-file').click()">Browse</button>
+                        </div>
+                        <div id="tex-file-selected" class="file-selected" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <!-- Media Files Section -->
+                <div class="form-section">
+                    <div class="section-header">🎬 Media Files (Images/Videos)</div>
+                    <div class="section-content">
+                        <div class="media-buttons">
+                            <button type="button" class="media-btn" onclick="addImages()">📸 Add Images</button>
+                            <button type="button" class="media-btn video" onclick="addVideos()">🎥 Add Videos</button>
+                            <button type="button" class="clear-btn" onclick="clearMedia()">Clear All</button>
+                        </div>
+                        <div id="media-files-list" class="media-files-list">
+                            No media files selected
+                        </div>
+                        <input type="file" id="image-files" accept="image/*" multiple style="display: none;" />
+                        <input type="file" id="video-files" accept="video/*" multiple style="display: none;" />
+                    </div>
+                </div>
+
+                <!-- Language Section -->
+                <div class="form-section">
+                    <div class="section-header">🌍 Language</div>
+                    <div class="section-content">
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="lang-en" name="language" value="english" checked>
+                                <label for="lang-en">🇺🇸 English</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="lang-ru" name="language" value="russian">
+                                <label for="lang-ru">🇷🇺 Русский (Russian)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Format Section -->
+                <div class="form-section">
+                    <div class="section-header">📊 Output Format</div>
+                    <div class="section-content">
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="format-pptx" name="format" value="pptx" checked>
+                                <label for="format-pptx">📊 PowerPoint (.pptx)</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="format-pdf" name="format" value="pdf">
+                                <label for="format-pdf">📄 PDF Document (.pdf)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="status" id="status" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="latex_converter.js"></script>
+</body>
+</html>
